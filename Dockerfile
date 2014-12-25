@@ -11,6 +11,6 @@ RUN chmod +x /archive.sh
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
-VOLUME ['/target', '/backup']
+RUN mkdir /target && mkdir /backup
 
 CMD '/start.sh'
