@@ -1,4 +1,4 @@
-from ubuntu:14.04
+from debian:jessie
 MAINTAINER Ilya Stepanov <dev@ilyastepanov.com>
 
 RUN apt-get update && \
