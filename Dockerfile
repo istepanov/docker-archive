@@ -13,4 +13,5 @@ RUN chmod +x /start.sh
 
 RUN mkdir /target && mkdir /backup
 
-CMD '/start.sh'
+ENTRYPOINT ["/start.sh"]
+CMD [""]
