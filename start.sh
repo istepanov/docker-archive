@@ -12,6 +12,7 @@ else
     if [ -n "$TAR_PARAMS" ]; then
         CRON_ENV="$CRON_ENV\nTAR_PARAMS=$TAR_PARAMS"
     fi
-    echo -e "$CRON_ENV\n$CRON_SCHEDULE /archive.sh" | crontab -
+    touch /var/log/cron.log
+    echo -e "$CRON_ENV\n\n$CRON_SCHEDULE /archive.sh >> /var/log/cron.log 2>&1" | crontab -
     exec cron -f
 fi

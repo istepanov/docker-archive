@@ -1,11 +1,11 @@
-Docker image for backing up folders to tar.gz archives
-================
+istepanov/archive
+=================
 
 Docker image that periodically archives a folder to tar.gz file.
 
 ### Usage
 
-	docker run -d [OPTIONS] istepanov/archive [no-cron]
+    docker run -d [OPTIONS] istepanov/archive [no-cron]
 
 ### Required parameters
 
@@ -24,21 +24,20 @@ Docker image that periodically archives a folder to tar.gz file.
 
 Need to upload archives to AWS S3? Use [istepanov/backup-to-s3](https://github.com/istepanov/docker-backup-to-s3).
 
-
 ### Examples
 
 Archive folder every day at 12:00pm:
 
     docker run -d \
-    	-v /home/username/data/:/target:ro \
-    	-v /home/username/backup:/backup \
-		-e 'CRON_SCHEDULE=0 12 * * *' \
-		istepanov/archive				
+        -v /home/username/data/:/target:ro \
+        -v /home/username/backup:/backup \
+        -e 'CRON_SCHEDULE=0 12 * * *' \
+        istepanov/archive
 
 Run once then delete the container, ignore `.git` folders:
 
-	docker run --rm \
-		-v /home/username/data/:/target \
-		-v /home/username/backup:/backup \
-		-e 'TAR_PARAMS=--exclude=.git' \
-		istepanov/archive no-cron
+    docker run --rm \
+        -v /home/username/data/:/target \
+        -v /home/username/backup:/backup \
+        -e 'TAR_PARAMS=--exclude=.git' \
+        istepanov/archive no-cron
