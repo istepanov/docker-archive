@@ -12,10 +12,8 @@ else
     if [[ ! -e "$LOGFIFO" ]]; then
         mkfifo "$LOGFIFO"
     fi
-    CRON_ENV="PREFIX=$PREFIX"
-    if [ -n "$TAR_PARAMS" ]; then
-        CRON_ENV="$CRON_ENV\nTAR_PARAMS=$TAR_PARAMS"
-    fi
+    CRON_ENV="PREFIX='$PREFIX'"
+    CRON_ENV="$CRON_ENV\nTAR_PARAMS='$TAR_PARAMS'"
     echo -e "$CRON_ENV\n\n$CRON_SCHEDULE /archive.sh > $LOGFIFO 2>&1" | crontab -
     crontab -l
     cron
