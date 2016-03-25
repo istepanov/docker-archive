@@ -3,7 +3,7 @@
 set -e
 
 CRON_SCHEDULE=${CRON_SCHEDULE:-0 1 * * *}
-PREFIX=${PREFIX:-backup}
+export PREFIX=${PREFIX:-backup}
 
 if [[ "$1" == 'no-cron' ]]; then
     exec /archive.sh
