@@ -1,6 +1,12 @@
 istepanov/archive
 =================
 
+[![Docker Stars](https://img.shields.io/docker/stars/istepanov/archive.svg)](https://hub.docker.com/r/istepanov/archive/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/istepanov/archive.svg)](https://hub.docker.com/r/istepanov/archive/)
+[![Docker Build](https://img.shields.io/docker/automated/istepanov/archive.svg)](https://hub.docker.com/r/istepanov/archive/)
+[![Layers](https://images.microbadger.com/badges/image/istepanov/archive.svg)](https://microbadger.com/images/istepanov/archive)
+[![Version](https://images.microbadger.com/badges/version/istepanov/archive.svg)](https://microbadger.com/images/istepanov/archive)
+
 Docker image that periodically archives a folder to tar.gz file.
 
 ### Usage
